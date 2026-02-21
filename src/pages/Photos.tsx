@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Upload, Search, X, ChevronLeft, ChevronRight, Calendar, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -44,13 +45,15 @@ const Photos = () => {
             className="polaroid cursor-pointer group hover:-translate-y-1 transition-all duration-300"
             onClick={() => setSelectedIndex(i)}
           >
-            <div className="aspect-square overflow-hidden rounded-sm">
-              <img
-                src={photo.url}
-                alt={photo.title}
-                className="w-full h-full object-cover group-hover:sepia-[0.2] transition-all duration-300"
-              />
-            </div>
+            <Link to={`/photos/${photo.id}`} className="block" onClick={e => e.stopPropagation()}>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img
+                  src={photo.url}
+                  alt={photo.title}
+                  className="w-full h-full object-cover group-hover:sepia-[0.2] transition-all duration-300"
+                />
+              </div>
+            </Link>
             <p className="mt-2 text-xs text-muted-foreground text-center font-serif">{photo.title}</p>
             <p className="text-[10px] text-muted-foreground/60 text-center">{photo.date}</p>
           </motion.div>
