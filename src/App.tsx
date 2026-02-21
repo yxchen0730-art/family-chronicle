@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import Families from "./pages/Families";
 import CreateFamily from "./pages/CreateFamily";
+import FamilyDetail from "./pages/FamilyDetail";
 import Photos from "./pages/Photos";
 import Timeline from "./pages/Timeline";
 import People from "./pages/People";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/families" element={<Families />} />
             <Route path="/families/create" element={<CreateFamily />} />
+            <Route path="/families/:id" element={<FamilyDetail />} />
             <Route path="/photos" element={<Photos />} />
             <Route path="/photos/:id" element={<PhotoDetailPage />} />
             <Route path="/timeline" element={<Timeline />} />
