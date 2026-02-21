@@ -14,6 +14,7 @@ import PersonDetail from "./pages/PersonDetail";
 import FamilyTree from "./pages/FamilyTree";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import PhotoDetailPage from "./pages/PhotoDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/families" element={<Families />} />
             <Route path="/families/create" element={<CreateFamily />} />
             <Route path="/photos" element={<Photos />} />
+            <Route path="/photos/:id" element={<PhotoDetailPage />} />
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/people" element={<People />} />
             <Route path="/people/:id" element={<PersonDetail />} />
