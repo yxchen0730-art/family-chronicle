@@ -26,17 +26,19 @@ const Families = () => {
             transition={{ delay: i * 0.1 }}
             className="paper-card overflow-hidden hover:-translate-y-1 transition-transform duration-300"
           >
-            <div className="aspect-[16/10] overflow-hidden">
-              <img src={family.coverUrl} alt={family.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="p-5">
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-1">{family.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{family.description}</p>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1"><Users className="h-3.5 w-3.5" />{family.memberCount} 人</span>
-                <span className="flex items-center gap-1"><Camera className="h-3.5 w-3.5" />{family.photoCount} 张</span>
+            <Link to={`/families/${family.id}`} className="block">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img src={family.coverUrl} alt={family.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-            </div>
+              <div className="p-5">
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-1">{family.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{family.description}</p>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1"><Users className="h-3.5 w-3.5" />{family.memberCount} 人</span>
+                  <span className="flex items-center gap-1"><Camera className="h-3.5 w-3.5" />{family.photoCount} 张</span>
+                </div>
+              </div>
+            </Link>
           </motion.div>
         ))}
       </div>
