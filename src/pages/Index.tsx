@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Camera, Users, TreePine, BookOpen } from 'lucide-react';
+import { Camera, Users, TreePine, BookOpen, LogIn, UserPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
@@ -29,12 +29,20 @@ const Index = () => {
               翻开泛黄的相册，每一张照片都是一段温暖的故事。<br />
               让我们一起守护这份珍贵的家族记忆。
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center flex-wrap">
               <Button asChild size="lg" className="font-serif text-base px-8">
                 <Link to="/families">开始探索</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="font-serif text-base px-8">
                 <Link to="/photos">浏览照片</Link>
+              </Button>
+            </div>
+            <div className="flex gap-3 justify-center mt-6">
+              <Button asChild variant="secondary" size="sm" className="font-serif">
+                <Link to="/login"><LogIn className="h-4 w-4 mr-1" />登录</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm" className="font-serif">
+                <Link to="/register"><UserPlus className="h-4 w-4 mr-1" />注册</Link>
               </Button>
             </div>
           </motion.div>

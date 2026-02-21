@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Camera, Users, TreePine, Clock, Home, Menu, X } from 'lucide-react';
+import { Camera, Users, TreePine, Clock, Home, Menu, X, LogIn } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const navItems = [
   { path: '/', label: '首页', icon: Home },
@@ -41,6 +42,11 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
+          <div className="ml-2 pl-2 border-l border-border">
+            <Button asChild variant="ghost" size="sm" className="font-serif">
+              <Link to="/login"><LogIn className="h-4 w-4 mr-1" />登录</Link>
+            </Button>
+          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -71,6 +77,15 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
+          <div className="vintage-divider my-2" />
+          <Link
+            to="/login"
+            onClick={() => setMobileOpen(false)}
+            className="flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium text-primary hover:bg-secondary"
+          >
+            <LogIn className="h-4 w-4" />
+            登录 / 注册
+          </Link>
         </div>
       )}
     </nav>
