@@ -12,6 +12,8 @@ import Timeline from "./pages/Timeline";
 import People from "./pages/People";
 import PersonDetail from "./pages/PersonDetail";
 import FamilyTree from "./pages/FamilyTree";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
             <Route path="/people" element={<People />} />
             <Route path="/people/:id" element={<PersonDetail />} />
             <Route path="/family-tree" element={<FamilyTree />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

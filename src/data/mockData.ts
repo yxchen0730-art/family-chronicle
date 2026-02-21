@@ -46,6 +46,8 @@ export interface FamilyTreeNode {
   spouseId?: string;
   parentId?: string;
   generation: number;
+  bio?: string;
+  relation?: string;
 }
 
 export const families: Family[] = [
@@ -86,10 +88,10 @@ export const timelineEvents: TimelineEvent[] = [
 ];
 
 export const familyTreeNodes: FamilyTreeNode[] = [
-  { id: '1', name: '张明远', gender: '男', birthYear: 1935, deathYear: 2010, generation: 1, spouseId: '2' },
-  { id: '2', name: '李秀兰', gender: '女', birthYear: 1938, deathYear: 2018, generation: 1 },
-  { id: '3', name: '张建国', gender: '男', birthYear: 1960, parentId: '1', generation: 2, spouseId: '4' },
-  { id: '4', name: '王美华', gender: '女', birthYear: 1962, generation: 2 },
-  { id: '5', name: '张小明', gender: '男', birthYear: 1988, parentId: '3', generation: 3 },
-  { id: '6', name: '张小丽', gender: '女', birthYear: 1991, parentId: '3', generation: 3 },
+  { id: '1', name: '张明远', gender: '男', birthYear: 1935, deathYear: 2010, generation: 1, spouseId: '2', relation: '祖父', bio: '张氏家族第三代长子，一生从事教育工作，桃李满天下。' },
+  { id: '2', name: '李秀兰', gender: '女', birthYear: 1938, deathYear: 2018, generation: 1, relation: '祖母', bio: '温婉贤淑，操持家务数十年，是全家的精神支柱。' },
+  { id: '3', name: '张建国', gender: '男', birthYear: 1960, parentId: '1', generation: 2, spouseId: '4', relation: '父亲', bio: '继承父志投身教育，现为大学教授。' },
+  { id: '4', name: '王美华', gender: '女', birthYear: 1962, generation: 2, relation: '母亲', bio: '医院护士长，照顾家庭三十余年。' },
+  { id: '5', name: '张小明', gender: '男', birthYear: 1988, parentId: '3', generation: 3, relation: '长子', bio: '软件工程师，热爱摄影和家族历史记录。' },
+  { id: '6', name: '张小丽', gender: '女', birthYear: 1991, parentId: '3', generation: 3, relation: '长女', bio: '自由设计师，负责家族相册的整理工作。' },
 ];
